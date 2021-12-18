@@ -1,4 +1,15 @@
+*{
+    box-sizing: border-box;
+    color: black;
+}
+
+body{
+    font-family: 'Syne Mono', monospace;;
+}
+
 .jumbotron {
-    background-image: url(/img/pexels-daria-shevtsova-3326710.jpeg);
+    background-image: url("../img/thumbs_beer-foam-and-bubbles-website-header.webp");
+    text-align: center;
+    background-size: inherit;
 }
 
