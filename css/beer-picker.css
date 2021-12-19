@@ -37,29 +37,40 @@ body{
 
 
 .row img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border: 1px solid black;
     border-radius: 50%;
-    padding-bottom: 5px;
+    margin-top: 30px;
+    box-shadow: 0 0 10px 8px #edcf8e;
 }
 .beers {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border: 2px solid black;
+    background-color: #28231c;
+    color: #e1ad3d;
     padding-top: 15px;
 }
 .beers h2 {
-    font-size: x-large;
+    padding-top: 15px;
+    font-size: xx-large;
 }
 .beers h3 {
-    font-size: large;
+    font-size: x-large;
+    padding-bottom: 15px;
 }
 .beers hr {
-    border: 2px solid #e1ad3d;
-    background-color: #e1ad3d;
+    border: 2px solid #edcf8e;
+    width: 35%;
+}
+.btn {
+    background-color: #28231c;
+    color: #edcf8e;
+}
+.btn:hover {
+    color: #edcf8e;
 }
 
 
@@ -81,7 +92,7 @@ footer {
 .foot-left {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-content: center;
 }
 .logo {
@@ -99,8 +110,13 @@ footer {
 hr {
     border: 2px solid black;
     width: 100%;
+    border-radius: 40%;
 }
 
+.foot-middle {
+    display: flex;
+    flex-direction: column;
+}
 .foot-middle input {
     text-align: center;
 }
@@ -111,18 +127,17 @@ hr {
     margin-top: 35px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .apps {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 70px;
 }
 
 
 
-@media screen and (min-width:426px) and (max-width: 1128px) {
+@media screen and (min-width: 508px) and (max-width: 1128px) {
     footer {
        flex-direction: column;
         justify-content: center;
@@ -142,7 +157,6 @@ hr {
         font-size: x-large;
     }
     .foot-middle {
-        width: 80%;
         margin-top: 20px;
         border-top: 4px solid black;
     }
@@ -157,7 +171,7 @@ hr {
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 507px) {
     footer {
         display: inline-block;
         text-align: center;

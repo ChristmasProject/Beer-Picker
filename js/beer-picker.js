@@ -19,7 +19,7 @@ let beers = [
     {id: 16, name: "Woodchuck", style: "cider", image: "/img/cider.jpeg"},
     {id: 17, name: "Pommeau", style: "cider",image: "/img/cider.jpeg"},
     {id: 18, name: "Blueberry Spaceship", style: "cider", image: "/img/cider.jpeg"},
-    {id: 19, name: "Keller Pils", style: "amber", image: "/img/amber.jpeg"},
+    {id: 19, name: "Sunset Skies", style: "amber", image: "/img/amber.jpeg"},
     {id: 20, name: "Alt-Eration", style: "amber", image: "/img/amber.jpeg"},
     {id: 21, name: "Balt Altbier", style: "amber", image: "/img/amber.jpeg"},
     {id: 22, name: "Double Nickel", style: "amber", image: "/img/amber.jpeg"},
