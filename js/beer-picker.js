@@ -1,8 +1,4 @@
-// const image1 = <img src='../img/light-beers.webp' alt='light beer'/>
-// const image2 = <img src='../img'/>
-// const image3 = <img src='../img'/>
-// const image4 = <img src='../img'/>
-
+"use strict";
 let beers = [
     {id: 1, name: "Nite Lite", style: "light", image: "/img/light-beers.webp"},
     {id: 2, name: "Slightly Mighty", style: "light", image: "/img/light-beers.webp"},
@@ -29,4 +25,23 @@ let beers = [
     {id: 23, name: "Free Time", style: "amber", image: "/img/light-beers.webp"},
     {id: 24, name: "Grevensteiner", style: "amber", image: "/img/light-beers.webp"},
 ]
+
+
+// THIS WHOLE THING LOOPS THROUGH EACH BEER AND PRODUCES A PERFECT LINE OF HTML FOR EACH ONE
+
+function renderBeers(){
+beers.forEach(function(beer){
+    console.log(beer);
+    let newHTML = '';
+    newHTML += '<div class= "col-md-4 col-lg-3 beers"><div><img src="' + beer.image + '"></div><div><h2>' + beer.name + '</h2></div><div><h3>' + beer.style + '</h3></div></div>';
+
+    console.log(newHTML);
+    console.log(typeof newHTML);
+    return newHTML;
+
+})}
+renderBeers();
+// END OF FUNCTION
+
+
 
