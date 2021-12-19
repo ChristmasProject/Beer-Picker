@@ -31,15 +31,16 @@
             <div class="form-group">
                 <label for="sel1">Select Beer by Style:</label>
                 <select class="form-control" id="sel1">
-                    <option>Show All Beers</option>
-                    <option>Light Beers</option>
-                    <option>Amber Beers</option>
-                    <option>Dark Beers</option>
-                    <option>Ciders</option>
+                    <option value="all">Show All Beers</option>
+                    <option value="light">Light Beers</option>
+                    <option value="amber">Amber Beers</option>
+                    <option value="dark">Dark Beers</option>
+                    <option value="cider">Ciders</option>
                 </select>
+                <label for="beer-name">Or Search by Beer Name:</label>
+                <input type="text" class="form-control" id="beer-name">
+                <button type="submit" id="selection">Go!</button>
             </div>
-            <label for="beer-name">Beer Name:</label>
-            <input type="text" class="form-control" id="beer-name">
         </div>
         <div class="card-footer">Results will display below...Enjoy!</div>
     </div>
@@ -66,41 +67,48 @@
 <footer>
     <div class="foot-left">
         <div class="logo">
-        <h2> Beer Picker </h2><img src="https://img.icons8.com/doodle/48/000000/beer--v1.png"/>
+            <h2> Beer Picker </h2><img src="https://img.icons8.com/doodle/48/000000/beer--v1.png"/>
         </div>
         <hr>
         <div class="anchors">
             <h3> Contact Us</h3>
-        <a href="#"><p>About</p></a>
-        <a href="#"><p>Why and How ?</p></a>
-        <a href="#"><p>Our Supporters</p></a>
+            <a href="#"><p>About</p></a>
+            <a href="#"><p>Why and How ?</p></a>
+            <a href="#"><p>Our Supporters</p></a>
         </div>
     </div>
 
     <div class="foot-middle">
         <h2>Add Your Own Beer Here !</h2>
         <p>Beer Picker loves to keep up with the times....<br>
-        Take a few seconds to update our app with your favorite<br>
-        brews so others can experience the joy !</p>
+            Take a few seconds to update our app with your favorite<br>
+            brews so others can experience the joy !</p>
         <hr>
         <label for="added-beer-name">What are the kids calling it nowadays ?</label>
         <input type="text" class="form-control" id="added-beer-name" placeholder="Name of New Beer">
         <label for="added-beer-style"><br>What kind of shade is it rockin' ?</label>
-        <input type="text" class="form-control" id="added-beer-style" placeholder="Style of New Beer">
+        <!--        <input type="text" class="form-control" id="added-beer-style" placeholder="Style of New Beer">-->
+        <select class="form-control" id="added-beer-style">
+            <option value="light">Light</option>
+            <option value="amber">Amber</option>
+            <option value="dark">Dark</option>
+            <option value="cider">Cider</option>
+        </select>
         <br>
-        <label for="contribute-beer">Now add it !</label>
-        <input type="submit" id="contribute-beer" class="btn" value="Contribute">
+        <!--        <label for="contribute-beer">Now add it !</label>-->
+        <input type="submit" id="contribute-beer" class="btn" value="Add My Beer!">
     </div>
     <div class="foot-right">
         <hr>
         <h2>- GET THE APP -</h2>
-<!--        USE WITH OR WITHOUT ?-->
-<!--        <hr>-->
+        <!--        USE WITH OR WITHOUT ?-->
+        <!--        I LIKE IT WITHOUT-->
+        <!--        <hr>-->
         <div class="apps">
-        <a href="#"><img src="https://img.icons8.com/doodle/64/000000/google-play.png"/></a>
+            <a href="#"><img src="https://img.icons8.com/doodle/64/000000/google-play.png"/></a>
             <a href="#"><img src="https://img.icons8.com/material-outlined/96/000000/mac-os--v2.png"/></a>
         </div>
-            <p>Copyright© 2021 Christmas Project Design</p>
+        <p>Copyright© 2021 Christmas Project Design</p>
     </div>
 </footer>
 <!--HERE IS THE BOOTSTRAP JS SCRIPT TAG-->

@@ -213,6 +213,19 @@ hr {
     .apps a {
         padding: 20px;
     }
+
+    #added-beer-name.form-control{
+        margin: 0 auto;
+    }
+    #added-beer-style.form-control{
+        margin: 0 auto;
+        width: 70%;
+    }
+    #contribute-beer.btn{
+        margin: 0 auto;
+    }
 }
+
+
 /*END SO FAR*/
 

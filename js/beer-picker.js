@@ -55,5 +55,4 @@ let contentArea = document.querySelector('.row');
 contentArea.innerHTML = createColumns(beers);
 
 
-// console.log(createColumns(beers));
-// console.log(typeof createColumns(beers));
+////////////////////////////////////////////////
