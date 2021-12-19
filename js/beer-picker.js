@@ -1,4 +1,5 @@
 "use strict";
+
 let beers = [
     {id: 1, name: "Nite Lite", style: "light", image: "/img/light-beers.webp"},
     {id: 2, name: "Slightly Mighty", style: "light", image: "/img/light-beers.webp"},
@@ -26,21 +27,33 @@ let beers = [
     {id: 24, name: "Grevensteiner", style: "amber", image: "/img/light-beers.webp"},
 ]
 
+// THIS FUNCTION WRITES EACH LINE OF HTML AND RETURNS IT TO THE LOOP FUNCTION
 
-// THIS WHOLE THING LOOPS THROUGH EACH BEER AND PRODUCES A PERFECT LINE OF HTML FOR EACH ONE
+function createHTML(beer){
 
-function renderBeers(){
-beers.forEach(function(beer){
-    console.log(beer);
-    let newHTML = '';
-    newHTML += '<div class= "col-md-4 col-lg-3 beers"><div><img src="' + beer.image + '"></div><div><h2>' + beer.name + '</h2></div><div><h3>' + beer.style + '</h3></div></div>';
+    let html = '<div class= "col-md-4 col-lg-3 beers"><div><img src="';
+    html += beer.image + '"></div><div><h2>' + beer.name + '</h2></div><div><h3>' + beer.style + '</h3></div></div>';
 
-    console.log(newHTML);
-    console.log(typeof newHTML);
+    return html;
+}
 
-})}
-renderBeers();
-// END OF FUNCTION
+// THIS LOOP FUNCTION RUNS EACH BEER THROUGH THE FIRST FUNCTION ABOVE AND RETURNS THE HTML
 
 
+function createColumns(beers){
+    let html = '';
+    for(let i = 0; i < beers.length; i++){
+        html += createHTML(beers[i]);
+    }
+    return html;
+}
 
+
+// THIS SELECTS THE ROW DIV AS CONTENT AREA, THEN ADDS THE NEW HTML STRING TO ITS INNER HTML
+
+let contentArea = document.querySelector('.row');
+contentArea.innerHTML = createColumns(beers);
+
+
+// console.log(createColumns(beers));
+// console.log(typeof createColumns(beers));
