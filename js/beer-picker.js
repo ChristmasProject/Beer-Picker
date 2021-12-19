@@ -39,6 +39,7 @@ function createHTML(beer){
 
 // THIS LOOP FUNCTION RUNS EACH BEER THROUGH THE FIRST FUNCTION ABOVE AND RETURNS THE HTML
 
+
 function createColumns(beers){
     let html = '';
     for(let i = 0; i < beers.length; i++){
@@ -46,6 +47,7 @@ function createColumns(beers){
     }
     return html;
 }
+
 
 // THIS SELECTS THE ROW DIV AS CONTENT AREA, THEN ADDS THE NEW HTML STRING TO ITS INNER HTML
 
