@@ -48,11 +48,12 @@ function createColumns(beers){
     return html;
 }
 
+// THIS IS THE FILTERING FOR THE SELECT MENU
 
 function updateBeers(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedBeer = beerSelection.value;
-    var filteredBeers = [];
+    let selectedBeer = beerSelection.value;
+    let filteredBeers = [];
     beers.forEach(function(beer) {
         if (beer.style === selectedBeer) {
             filteredBeers.push(beer);
@@ -63,13 +64,6 @@ function updateBeers(e) {
 
 
 
-// THIS SELECTS THE ROW DIV AS CONTENT AREA, THEN ADDS THE NEW HTML STRING TO ITS INNER HTML
-
-
-// contentArea.innerHTML = createColumns(beers);
-
-
-////////////////////////////////////////////////
 let contentArea = document.querySelector('.row');
 let submitButton = document.querySelector('#selection');
 let beerSelection = document.querySelector('#sel1');
