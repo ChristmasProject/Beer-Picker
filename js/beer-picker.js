@@ -49,10 +49,32 @@ function createColumns(beers){
 }
 
 
+function updateBeers(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    var selectedBeer = beerSelection.value;
+    var filteredBeers = [];
+    beers.forEach(function(beer) {
+        if (beer.style === selectedBeer) {
+            filteredBeers.push(beer);
+        }
+    });
+    contentArea.innerHTML = createColumns(filteredBeers);
+}
+
+
+
 // THIS SELECTS THE ROW DIV AS CONTENT AREA, THEN ADDS THE NEW HTML STRING TO ITS INNER HTML
 
-let contentArea = document.querySelector('.row');
-contentArea.innerHTML = createColumns(beers);
+
+// contentArea.innerHTML = createColumns(beers);
 
 
 ////////////////////////////////////////////////
+let contentArea = document.querySelector('.row');
+let submitButton = document.querySelector('#selection');
+let beerSelection = document.querySelector('#sel1');
+
+contentArea.innerHTML = createColumns(beers);
+
+submitButton.addEventListener('click', updateBeers);
+
