@@ -37,7 +37,6 @@ beers.forEach(function(beer){
 
     console.log(newHTML);
     console.log(typeof newHTML);
-    return newHTML;
 
 })}
 renderBeers();
