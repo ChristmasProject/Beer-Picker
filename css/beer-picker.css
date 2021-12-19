@@ -1,17 +1,40 @@
+/*OVERALL BODY STYLING*/
+
 *{
     box-sizing: border-box;
-    color: black;
 }
 
 body{
-    font-family: 'Syne Mono', monospace;;
+    font-family: 'Syne Mono', monospace;
+    margin: 0;
+    background-color: #28231c;
+    color: #edcf8e;
+    text-align: center;
 }
+
+/*JUMBOTRON STYLING*/
 
 .jumbotron {
     background-image: url("../img/thumbs_beer-foam-and-bubbles-website-header.webp");
     text-align: center;
-    background-size: inherit;
+    background-size: cover;
+    color: #28231c;
 }
+
+.jumbotron h1{
+    font-size: 5em;
+    color: #28231c;
+}
+
+/*SEARCH CARD STYLING*/
+
+.search-card{
+    color: #28231c;
+    margin: 20px auto;
+    background-color: #e1ad3d;
+    width: 75%;
+}
+
 
 img {
     width: 100px;
@@ -26,3 +49,6 @@ img {
     justify-content: space-around;
     border: 2px solid black;
 }
+
+/*END SO FAR*/
+
