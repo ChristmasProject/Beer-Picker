@@ -97,7 +97,10 @@ function newBeer(e) {
 
 
 
-    beers.unshift(newBeerSubmission);
+
+
+    beers.push(newBeerSubmission);
+    newBeerSubmission.id = beers.length + 1;
     console.log(beers);
     contentArea.innerHTML = createColumns(beers);
 }
