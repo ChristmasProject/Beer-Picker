@@ -62,23 +62,49 @@ function updateBeers(e) {
     contentArea.innerHTML = createColumns(filteredBeers);
 }
 
+
+
+
+function selectBeer(e){
+    e.preventDefault();
+    let chosenBeer = beerNameSelection.value;
+    let beerChoice = [];
+    beers.forEach(function(beer){
+        if (beer.name === chosenBeer){
+            beerChoice.push(beer);
+        }
+    });
+    contentArea.innerHTML = createColumns(beerChoice);
+}
+
+
 // FOOTER FUNCTION STARTS HERE
 
-function addNewBeer() {
-
-}
+// function addNewBeer(newBeer) {
+//     var newBeer = {};
+//
+// }
 
 
 // FUNCTIONS GO ABOVE THIS LINE
 // //////////////////////////////////////////
-
+// THIS ONE DECLARES THE CONTENT AREA
 let contentArea = document.querySelector('.row');
+
+// THESE TWO ARE THE DROPDOWN WORKING FINE
 let submitButton = document.querySelector('#selection');
 let beerSelection = document.querySelector('#sel1');
 
+// THE SEARCH BY NAME BOX STARTS HERE
+let chooseABeerButton = document.querySelector('#choose');
+let beerNameSelection = document.querySelector('#beer-name');
+
+
+// THIS LAUNCHES THE INITIAL LAYOUT WITH ALL BEERS SHOWING IN ORDER
 contentArea.innerHTML = createColumns(beers);
 
-
+// THESE ARE THE EVENT LISTENERS
 submitButton.addEventListener('click', updateBeers);
+chooseABeerButton.addEventListener('click', selectBeer);
 
 
