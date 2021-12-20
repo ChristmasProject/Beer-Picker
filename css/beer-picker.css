@@ -72,6 +72,9 @@ body{
 .btn:hover {
     color: #edcf8e;
 }
+.form-control {
+    text-align: center;
+}
 
 
 /*FOOTER STYLING*/
@@ -86,6 +89,7 @@ footer {
     color: #28231c;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 /*LEFT*/
@@ -94,11 +98,13 @@ footer {
     flex-direction: column;
     justify-content: space-evenly;
     align-content: center;
+    width: 26%;
 }
 .logo {
     display: flex;
     flex-direction: row;
     margin-top: 35px;
+    justify-content: center;
 }
 .logo h2 {
     margin-top: 10px;
@@ -124,7 +130,7 @@ hr {
 
 /*RIGHT*/
 .foot-right {
-    margin-top: 35px;
+    margin-top: 130px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -137,16 +143,16 @@ hr {
 
 
 
+
+/*MEDIA QUERY STARTS HERE*/
+/**/
 @media screen and (min-width: 508px) and (max-width: 1128px) {
     footer {
        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .logo h2{
-        font-size: xxx-large;
-    }
-    .foot-left hr {
+    .foot-left {
         width: 100%;
     }
     .anchors h3 {
@@ -175,6 +181,9 @@ hr {
     footer {
         display: inline-block;
         text-align: center;
+    }
+    .foot-left {
+        width: 100%;
     }
     .logo {
         display: flex;
