@@ -86,6 +86,17 @@ function newBeer(e) {
     let newSubmissionStyle = newBeerStyle.value;
     newBeerSubmission.name = newSubmissionName;
     newBeerSubmission.style = newSubmissionStyle;
+    if (newSubmissionStyle === 'light') {
+        newBeerSubmission.image = "/img/light.jpeg";
+    } else if (newSubmissionStyle === 'amber') {
+        newBeerSubmission.image = '/img/amber.jpeg';
+    } else if (newSubmissionStyle === 'dark') {
+        newBeerSubmission.image = '/img/dark.jpeg';
+    } else
+        newBeerSubmission.image = '/img/cider.jpeg';
+
+
+
     beers.unshift(newBeerSubmission);
     console.log(beers);
     contentArea.innerHTML = createColumns(beers);
