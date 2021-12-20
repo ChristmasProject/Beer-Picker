@@ -79,7 +79,8 @@ function selectBeer(e){
 
 
 // FOOTER FUNCTION STARTS HERE
-function newBeer(){
+function newBeer(e) {
+    e.preventDefault();
     let newBeerSubmission = {};
     let newSubmissionName = newBeerName.value;
     let newSubmissionStyle = newBeerStyle.value;
@@ -87,8 +88,9 @@ function newBeer(){
     newBeerSubmission.style = newSubmissionStyle;
     beers.unshift(newBeerSubmission);
     console.log(beers);
-    
+    contentArea.innerHTML = createColumns(beers);
 }
+
 
 
 // FUNCTIONS GO ABOVE THIS LINE
