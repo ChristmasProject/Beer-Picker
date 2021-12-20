@@ -54,6 +54,11 @@ function updateBeers(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedBeer = beerSelection.value;
     let filteredBeers = [];
+
+    if(beerSelection.value === 'all'){
+        contentArea.innerHTML = createColumns(beers);
+        return;
+    }else
     beers.forEach(function(beer) {
         if (beer.style === selectedBeer) {
             filteredBeers.push(beer);
