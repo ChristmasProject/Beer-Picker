@@ -54,5 +54,10 @@ function createColumns(beers){
 let contentArea = document.querySelector('.row');
 contentArea.innerHTML = createColumns(beers);
 
+// FOOTER FUNCTION STARTS HERE
 
+function addNewBeer(newBeer) {
+    var newBeer = {};
+
+}
 ////////////////////////////////////////////////
