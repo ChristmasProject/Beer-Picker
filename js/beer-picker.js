@@ -79,11 +79,32 @@ function selectBeer(e){
 
 
 // FOOTER FUNCTION STARTS HERE
+function newBeer(e) {
+    e.preventDefault();
+    let newBeerSubmission = {};
+    let newSubmissionName = newBeerName.value;
+    let newSubmissionStyle = newBeerStyle.value;
+    newBeerSubmission.name = newSubmissionName;
+    newBeerSubmission.style = newSubmissionStyle;
+    if (newSubmissionStyle === 'light') {
+        newBeerSubmission.image = "/img/light.jpeg";
+    } else if (newSubmissionStyle === 'amber') {
+        newBeerSubmission.image = '/img/amber.jpeg';
+    } else if (newSubmissionStyle === 'dark') {
+        newBeerSubmission.image = '/img/dark.jpeg';
+    } else
+        newBeerSubmission.image = '/img/cider.jpeg';
 
-// function addNewBeer(newBeer) {
-//     var newBeer = {};
-//
-// }
+
+
+
+
+    beers.push(newBeerSubmission);
+    newBeerSubmission.id = beers.length + 1;
+    console.log(beers);
+    contentArea.innerHTML = createColumns(beers);
+}
+
 
 
 // FUNCTIONS GO ABOVE THIS LINE
@@ -94,11 +115,13 @@ let contentArea = document.querySelector('.row');
 // THESE TWO ARE THE DROPDOWN WORKING FINE
 let submitButton = document.querySelector('#selection');
 let beerSelection = document.querySelector('#sel1');
+let newBeerName = document.querySelector('#added-beer-name');
+let newBeerStyle = document.querySelector('#added-beer-style');
 
 // THE SEARCH BY NAME BOX STARTS HERE
 let chooseABeerButton = document.querySelector('#choose');
 let beerNameSelection = document.querySelector('#beer-name');
-
+let submitBeer = document.querySelector('#contribute-beer')
 
 // THIS LAUNCHES THE INITIAL LAYOUT WITH ALL BEERS SHOWING IN ORDER
 contentArea.innerHTML = createColumns(beers);
@@ -106,5 +129,6 @@ contentArea.innerHTML = createColumns(beers);
 // THESE ARE THE EVENT LISTENERS
 submitButton.addEventListener('click', updateBeers);
 chooseABeerButton.addEventListener('click', selectBeer);
+submitBeer.addEventListener('click', newBeer);
 
 
