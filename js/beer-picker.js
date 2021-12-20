@@ -62,7 +62,16 @@ function updateBeers(e) {
     contentArea.innerHTML = createColumns(filteredBeers);
 }
 
+// FOOTER FUNCTION STARTS HERE
 
+function addNewBeer(newBeer) {
+    var newBeer = {};
+
+}
+
+
+// FUNCTIONS GO ABOVE THIS LINE
+// //////////////////////////////////////////
 
 let contentArea = document.querySelector('.row');
 let submitButton = document.querySelector('#selection');
@@ -70,5 +79,7 @@ let beerSelection = document.querySelector('#sel1');
 
 contentArea.innerHTML = createColumns(beers);
 
+
 submitButton.addEventListener('click', updateBeers);
+
 
