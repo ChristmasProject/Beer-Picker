@@ -7,12 +7,6 @@ let beers = [
     {id: 4, name: "Harpoon Rec.", style: "light", image: "/img/light.jpeg"},
     {id: 5, name: "Kona Blond", style: "light", image: "/img/light.jpeg"},
     {id: 6, name: "Omission Ultimate", style: "light", image: "/img/light.jpeg"},
-    {id: 7, name: "Polygamy Nitro", style: "dark", image: "/img/dark.jpeg"},
-    {id: 8, name: "Cutthroat Porter", style: "dark", image: "/img/dark.jpeg"},
-    {id: 9, name: "Old Fezziwig", style: "dark", image: "/img/dark.jpeg"},
-    {id: 10, name: "Edmund Fitzgerald", style: "dark", image: "/img/dark.jpeg"},
-    {id: 11, name: "La Trappe Dubbel", style: "dark", image: "/img/dark.jpeg"},
-    {id: 12, name: "Shark Attack", style: "dark", image: "/img/dark.jpeg"},
     {id: 13, name: "Devils Backbone", style: "cider", image: "/img/cider.jpeg"},
     {id: 14, name: "Dooryard", style: "cider", image: "/img/cider.jpeg"},
     {id: 15, name: "La Mûre", style: "cider", image: "/img/cider.jpeg"},
@@ -25,6 +19,12 @@ let beers = [
     {id: 22, name: "Double Nickel", style: "amber", image: "/img/amber.jpeg"},
     {id: 23, name: "Free Time", style: "amber", image: "/img/amber.jpeg"},
     {id: 24, name: "Grevensteiner", style: "amber", image: "/img/amber.jpeg"},
+    {id: 7, name: "Polygamy Nitro", style: "dark", image: "/img/dark.jpeg"},
+    {id: 8, name: "Cutthroat Porter", style: "dark", image: "/img/dark.jpeg"},
+    {id: 9, name: "Old Fezziwig", style: "dark", image: "/img/dark.jpeg"},
+    {id: 10, name: "Edmund Fitzgerald", style: "dark", image: "/img/dark.jpeg"},
+    {id: 11, name: "La Trappe Dubbel", style: "dark", image: "/img/dark.jpeg"},
+    {id: 12, name: "Shark Attack", style: "dark", image: "/img/dark.jpeg"}
 ]
 
 // THIS FUNCTION WRITES EACH LINE OF HTML AND RETURNS IT TO THE LOOP FUNCTION
@@ -61,6 +61,7 @@ function updateBeers(e) {
     });
     contentArea.innerHTML = createColumns(filteredBeers);
 }
+
 
 
 
