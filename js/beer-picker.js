@@ -1,5 +1,6 @@
 "use strict";
 
+// HERE IS THE BEERS ARRAY
 let beers = [
     {id: 1, name: "Nite Lite", style: "light", image: "/img/light.jpeg"},
     {id: 2, name: "Slightly Mighty", style: "light", image: "/img/light.jpeg"},
@@ -26,6 +27,7 @@ let beers = [
     {id: 11, name: "La Trappe Dubbel", style: "dark", image: "/img/dark.jpeg"},
     {id: 12, name: "Shark Attack", style: "dark", image: "/img/dark.jpeg"}
 ]
+
 
 // THIS FUNCTION WRITES EACH LINE OF HTML AND RETURNS IT TO THE LOOP FUNCTION
 
@@ -67,12 +69,7 @@ function updateBeers(e) {
     contentArea.innerHTML = createColumns(filteredBeers);
 }
 
-function autoSelect(){
-    let choice =
-}
-
-
-
+// THIS IS FOR WHEN YOU SELECT A BEER IN THE TEXT INPUT
 
 function selectBeer(e){
     e.preventDefault();
@@ -143,17 +140,17 @@ function newBeer(e) {
     newBeerSubmission.id = beers.length + 1;
     console.log(beers);
     contentArea.innerHTML = createColumns(beers);
-}
+}localStorage.setItem("beers", JSON.stringify(beers));
 
 
 
 // FUNCTIONS GO ABOVE THIS LINE
 // //////////////////////////////////////////
-// THIS ONE DECLARES THE CONTENT AREA
+// THIS ONE DECLARES THE CONTENT AREAS
 let dupeAlert = document.querySelector('#duplicate-beer');
 let contentArea = document.querySelector('.row');
 
-// THESE TWO ARE THE DROPDOWN WORKING FINE
+// THESE ARE THE DROPDOWNS AND INPUT FIELDS
 let submitButton = document.querySelector('#selection');
 let beerSelection = document.querySelector('#sel1');
 let newBeerName = document.querySelector('#added-beer-name');
@@ -165,6 +162,7 @@ let beerNameSelection = document.querySelector('#beer-name');
 let submitBeer = document.querySelector('#contribute-beer')
 
 // THIS LAUNCHES THE INITIAL LAYOUT WITH ALL BEERS SHOWING IN ORDER
+
 contentArea.innerHTML = createColumns(beers);
 
 // THESE ARE THE EVENT LISTENERS
