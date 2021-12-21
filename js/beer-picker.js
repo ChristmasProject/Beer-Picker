@@ -67,6 +67,10 @@ function updateBeers(e) {
     contentArea.innerHTML = createColumns(filteredBeers);
 }
 
+function autoSelect(){
+    let choice =
+}
+
 
 
 

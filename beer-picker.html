@@ -9,11 +9,18 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/1c43af0730.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/beer-picker.css">
     <title>Beer Picker</title>
 </head>
 <body>
+<div class="container" id="top-header">
+    <h6><a href="https://github.com/CHodges00" target="_blank"><i class="fab fa-github"></i></i>&nbsp;Cody Hodges</a></h6>
+    <h6><a href="https://github.com/ChristmasProject" target="_blank"><i class="fab fa-github"></i>&nbsp;ChristmasProject</a></h6>
+    <h6><a href="https://github.com/Nelson-Delpozo" target="_blank"><i class="fab fa-github"></i></i>&nbsp;Nelson Delpozo</a></h6>
+</div>
+<div class="container">PRESENTS</div>
 <div class="container-fluid">
     <div class="jumbotron">
         <h1>Beer Picker</h1>
@@ -30,7 +37,7 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="sel1">Select Beer by Style:</label>
-                <select class="form-control" id="sel1">
+                <select class="form-control" id="sel1" onchange="updateBeers(this.value)">
                     <option value="all">Show All Beers</option>
                     <option value="light">Light Beers</option>
                     <option value="amber">Amber Beers</option>

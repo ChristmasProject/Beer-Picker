@@ -26,6 +26,30 @@ body{
     color: #28231c;
 }
 
+#top-header{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin: 5px auto;
+
+}
+
+#top-header *{
+    display: inline-block;
+    text-align: center;
+}
+
+#top-header a{
+    text-decoration: none;
+    color: #edcf8e;
+    position: relative;
+}
+
+#top-header a:active{
+    top: 2px;
+}
+
 /*SEARCH CARD STYLING*/
 
 .search-card{
