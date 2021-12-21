@@ -124,6 +124,7 @@ function newBeer(e) {
         }else{
             newBeerSubmission.name = newSubmissionName;
         newBeerSubmission.style = newSubmissionStyle;
+        dupeAlert.innerHTML = '';
         if (newSubmissionStyle === 'light') {
             newBeerSubmission.image = "/img/light.jpeg";
         } else if (newSubmissionStyle === 'amber') {
