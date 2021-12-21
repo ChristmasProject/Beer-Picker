@@ -109,19 +109,43 @@ function newBeer(e) {
 
 
 
-            beers.push(newBeerSubmission);
-            newBeerSubmission.id = beers.length + 1;
-            console.log(beers);
-            contentArea.innerHTML = createColumns(beers);
+//             beers.push(newBeerSubmission);
+//             newBeerSubmission.id = beers.length + 1;
+//             console.log(beers);
+//             contentArea.innerHTML = createColumns(beers);
+
+
+    for(let i = 0; i < beers.length; i++){
+        if(newBeerName.value === beers[i].name){
+        dupeAlert.innerHTML = "That Beer Already Exists Bud";
+        return;
+
+
+        }else{
+            newBeerSubmission.name = newSubmissionName;
+        newBeerSubmission.style = newSubmissionStyle;
+        if (newSubmissionStyle === 'light') {
+            newBeerSubmission.image = "/img/light.jpeg";
+        } else if (newSubmissionStyle === 'amber') {
+            newBeerSubmission.image = '/img/amber.jpeg'
+        } else if (newSubmissionStyle === 'dark') {
+            newBeerSubmission.image = '/img/dark.jpeg';
+        } else
+            newBeerSubmission.image = '/img/cider.jpeg';
+    }
+    }
+    beers.push(newBeerSubmission);
+    newBeerSubmission.id = beers.length + 1;
+    console.log(beers);
+    contentArea.innerHTML = createColumns(beers);
 }
-
-
 
 
 
 // FUNCTIONS GO ABOVE THIS LINE
 // //////////////////////////////////////////
 // THIS ONE DECLARES THE CONTENT AREA
+let dupeAlert = document.querySelector('#duplicate-beer');
 let contentArea = document.querySelector('.row');
 
 // THESE TWO ARE THE DROPDOWN WORKING FINE
