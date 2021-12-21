@@ -2,8 +2,8 @@
 
 // HERE IS THE BEERS ARRAY
 let beers = [
-    {id: 1, name: "Nite Lite", style: "light", image: "/img/light.jpeg"},
-    {id: 2, name: "Slightly Mighty", style: "light", image: "/img/light.jpeg"},
+    {id: 1, name: "Nite Lite", style: "light", image: "./img/light.jpeg"},
+    {id: 2, name: "Slightly Mighty", style: "light", image: "./img/light.jpeg"},
     {id: 3, name: "Bell’s Light", style: "light", image: "/img/light.jpeg"},
     {id: 4, name: "Harpoon Rec.", style: "light", image: "/img/light.jpeg"},
     {id: 5, name: "Kona Blond", style: "light", image: "/img/light.jpeg"},
