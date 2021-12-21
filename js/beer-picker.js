@@ -89,26 +89,33 @@ function newBeer(e) {
     let newBeerSubmission = {};
     let newSubmissionName = newBeerName.value;
     let newSubmissionStyle = newBeerStyle.value;
+
     newBeerSubmission.name = newSubmissionName;
     newBeerSubmission.style = newSubmissionStyle;
-    if (newSubmissionStyle === 'light') {
-        newBeerSubmission.image = "/img/light.jpeg";
-    } else if (newSubmissionStyle === 'amber') {
-        newBeerSubmission.image = '/img/amber.jpeg';
-    } else if (newSubmissionStyle === 'dark') {
-        newBeerSubmission.image = '/img/dark.jpeg';
-    } else
-        newBeerSubmission.image = '/img/cider.jpeg';
+
+        // for (let i = 0; i < beers.length; i++) {
+        //     if (newSubmissionName === beers[i].name) {
+        //         alert('already a beer');
+        //         return;
+        //     } else if (newSubmissionStyle === 'light') {
+        //         newBeerSubmission.image = "/img/light.jpeg";
+        //     } else if (newSubmissionStyle === 'amber') {
+        //         newBeerSubmission.image = '/img/amber.jpeg';
+        //     } else if (newSubmissionStyle === 'dark') {
+        //         newBeerSubmission.image = '/img/dark.jpeg';
+        //     } else
+        //         newBeerSubmission.image = '/img/cider.jpeg'
+        // }
 
 
 
-
-
-    beers.push(newBeerSubmission);
-    newBeerSubmission.id = beers.length + 1;
-    console.log(beers);
-    contentArea.innerHTML = createColumns(beers);
+            beers.push(newBeerSubmission);
+            newBeerSubmission.id = beers.length + 1;
+            console.log(beers);
+            contentArea.innerHTML = createColumns(beers);
 }
+
+
 
 
 
@@ -135,5 +142,3 @@ contentArea.innerHTML = createColumns(beers);
 submitButton.addEventListener('click', updateBeers);
 chooseABeerButton.addEventListener('click', selectBeer);
 submitBeer.addEventListener('click', newBeer);
-
-
