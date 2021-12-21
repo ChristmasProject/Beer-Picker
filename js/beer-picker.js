@@ -7,24 +7,24 @@ let beers = [
     {id: 4, name: "Harpoon Rec.", style: "light", image: "/img/light.jpeg"},
     {id: 5, name: "Kona Blond", style: "light", image: "/img/light.jpeg"},
     {id: 6, name: "Omission Ultimate", style: "light", image: "/img/light.jpeg"},
-    {id: 13, name: "Devils Backbone", style: "cider", image: "/img/cider.jpeg"},
-    {id: 14, name: "Dooryard", style: "cider", image: "/img/cider.jpeg"},
-    {id: 15, name: "La Mûre", style: "cider", image: "/img/cider.jpeg"},
-    {id: 16, name: "Woodchuck", style: "cider", image: "/img/cider.jpeg"},
-    {id: 17, name: "Pommeau", style: "cider",image: "/img/cider.jpeg"},
-    {id: 18, name: "Blueberry Spaceship", style: "cider", image: "/img/cider.jpeg"},
-    {id: 19, name: "Sunset Skies", style: "amber", image: "/img/amber.jpeg"},
-    {id: 20, name: "Alt-Eration", style: "amber", image: "/img/amber.jpeg"},
-    {id: 21, name: "Balt Altbier", style: "amber", image: "/img/amber.jpeg"},
-    {id: 22, name: "Double Nickel", style: "amber", image: "/img/amber.jpeg"},
-    {id: 23, name: "Free Time", style: "amber", image: "/img/amber.jpeg"},
-    {id: 24, name: "Grevensteiner", style: "amber", image: "/img/amber.jpeg"},
-    {id: 7, name: "Polygamy Nitro", style: "dark", image: "/img/dark.jpeg"},
-    {id: 8, name: "Cutthroat Porter", style: "dark", image: "/img/dark.jpeg"},
-    {id: 9, name: "Old Fezziwig", style: "dark", image: "/img/dark.jpeg"},
-    {id: 10, name: "Edmund Fitzgerald", style: "dark", image: "/img/dark.jpeg"},
-    {id: 11, name: "La Trappe Dubbel", style: "dark", image: "/img/dark.jpeg"},
-    {id: 12, name: "Shark Attack", style: "dark", image: "/img/dark.jpeg"}
+    {id: 7, name: "Devils Backbone", style: "cider", image: "/img/cider.jpeg"},
+    {id: 8, name: "Dooryard", style: "cider", image: "/img/cider.jpeg"},
+    {id: 9, name: "La Mûre", style: "cider", image: "/img/cider.jpeg"},
+    {id: 10, name: "Woodchuck", style: "cider", image: "/img/cider.jpeg"},
+    {id: 11, name: "Pommeau", style: "cider",image: "/img/cider.jpeg"},
+    {id: 12, name: "Blueberry Spaceship", style: "cider", image: "/img/cider.jpeg"},
+    {id: 13, name: "Sunset Skies", style: "amber", image: "/img/amber.jpeg"},
+    {id: 14, name: "Alt-Eration", style: "amber", image: "/img/amber.jpeg"},
+    {id: 15, name: "Balt Altbier", style: "amber", image: "/img/amber.jpeg"},
+    {id: 16, name: "Double Nickel", style: "amber", image: "/img/amber.jpeg"},
+    {id: 17, name: "Free Time", style: "amber", image: "/img/amber.jpeg"},
+    {id: 18, name: "Grevensteiner", style: "amber", image: "/img/amber.jpeg"},
+    {id: 19, name: "Polygamy Nitro", style: "dark", image: "/img/dark.jpeg"},
+    {id: 20, name: "Cutthroat Porter", style: "dark", image: "/img/dark.jpeg"},
+    {id: 21, name: "Old Fezziwig", style: "dark", image: "/img/dark.jpeg"},
+    {id: 22, name: "Edmund Fitzgerald", style: "dark", image: "/img/dark.jpeg"},
+    {id: 23, name: "La Trappe Dubbel", style: "dark", image: "/img/dark.jpeg"},
+    {id: 24, name: "Shark Attack", style: "dark", image: "/img/dark.jpeg"}
 ]
 
 // THIS FUNCTION WRITES EACH LINE OF HTML AND RETURNS IT TO THE LOOP FUNCTION
@@ -89,31 +89,9 @@ function newBeer(e) {
     let newBeerSubmission = {};
     let newSubmissionName = newBeerName.value;
     let newSubmissionStyle = newBeerStyle.value;
-
+    newBeerSubmission.id = beers.length + 1;
     newBeerSubmission.name = newSubmissionName;
     newBeerSubmission.style = newSubmissionStyle;
-
-        // for (let i = 0; i < beers.length; i++) {
-        //     if (newSubmissionName === beers[i].name) {
-        //         alert('already a beer');
-        //         return;
-        //     } else if (newSubmissionStyle === 'light') {
-        //         newBeerSubmission.image = "/img/light.jpeg";
-        //     } else if (newSubmissionStyle === 'amber') {
-        //         newBeerSubmission.image = '/img/amber.jpeg';
-        //     } else if (newSubmissionStyle === 'dark') {
-        //         newBeerSubmission.image = '/img/dark.jpeg';
-        //     } else
-        //         newBeerSubmission.image = '/img/cider.jpeg'
-        // }
-
-
-
-//             beers.push(newBeerSubmission);
-//             newBeerSubmission.id = beers.length + 1;
-//             console.log(beers);
-//             contentArea.innerHTML = createColumns(beers);
-
 
     for(let i = 0; i < beers.length; i++){
         if(newBeerName.value === beers[i].name){
@@ -135,11 +113,10 @@ function newBeer(e) {
     }
     }
     beers.push(newBeerSubmission);
-    newBeerSubmission.id = beers.length + 1;
     console.log(beers);
     contentArea.innerHTML = createColumns(beers);
-}
 
+}
 
 
 // FUNCTIONS GO ABOVE THIS LINE
@@ -166,3 +143,4 @@ contentArea.innerHTML = createColumns(beers);
 submitButton.addEventListener('click', updateBeers);
 chooseABeerButton.addEventListener('click', selectBeer);
 submitBeer.addEventListener('click', newBeer);
+
