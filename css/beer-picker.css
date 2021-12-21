@@ -25,6 +25,30 @@ body{
     font-size: 5em;
     color: #28231c;
 }
+/*HEADER ABOVE THE JUMBOTRON*/
+
+#top-header{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin: 5px auto;
+}
+
+#top-header *{
+    display: inline-block;
+    text-align: center;
+}
+
+#top-header a{
+    text-decoration: none;
+    color: #edcf8e;
+    position: relative;
+}
+
+#top-header a:active{
+    top: 2px;
+}
 
 /*SEARCH CARD STYLING*/
 
@@ -34,7 +58,6 @@ body{
     background-color: #e1ad3d;
     width: 75%;
 }
-
 
 .row img {
     width: 150px;
@@ -65,6 +88,9 @@ body{
     border: 2px solid #edcf8e;
     width: 35%;
 }
+
+/*BUTTONS AND FORMS*/
+
 .btn {
     background-color: #28231c;
     color: #edcf8e;
@@ -76,10 +102,7 @@ body{
     text-align: center;
 }
 
-
 /*FOOTER STYLING*/
-
-
 
 footer {
     margin-top: 100px;
@@ -100,19 +123,23 @@ footer {
     align-content: center;
     width: 26%;
 }
+
 .logo {
     display: flex;
     flex-direction: row;
     margin-top: 35px;
     justify-content: center;
 }
+
 .logo h2 {
     margin-top: 10px;
 }
+
 .anchors {
     font-size: large;
     line-height: 1;
 }
+
 hr {
     border: 2px solid black;
     width: 100%;
@@ -123,12 +150,13 @@ hr {
     display: flex;
     flex-direction: column;
 }
+
 .foot-middle input {
     text-align: center;
 }
 
-
 /*RIGHT*/
+
 .foot-right {
     margin-top: 40px;
     display: flex;
@@ -143,9 +171,6 @@ hr {
 .foot-right p {
     margin-top: 30px;
 }
-
-
-
 
 /*MEDIA QUERY STARTS HERE*/
 /**/
