@@ -75,7 +75,7 @@ function selectBeer(e){
     let chosenBeer = beerNameSelection.value;
     let beerChoice = [];
     beers.forEach(function(beer){
-        if (beer.name === chosenBeer){
+        if (beer.name.toLowerCase() === chosenBeer.toLowerCase()){
             beerChoice.push(beer);
         }
     });
@@ -116,7 +116,7 @@ function newBeer(e) {
 
 
     for(let i = 0; i < beers.length; i++){
-        if(newBeerName.value === beers[i].name){
+        if(newBeerName.value.toLowerCase() === beers[i].name.toLowerCase()){
         dupeAlert.innerHTML = "That Beer Already Exists Bud";
         return;
 
