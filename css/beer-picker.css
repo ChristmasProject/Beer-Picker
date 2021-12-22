@@ -178,6 +178,14 @@ hr {
     box-shadow: 0 0 10px 8px #edcf8e;
 }
 
+.support-img img{
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    border-radius: 20%;
+    box-shadow: 0 0 10px 8px #e1ad3d;
+}
+
 
 .profiles {
     display: flex;
@@ -294,6 +302,9 @@ hr {
     }
     .who-imgs img {
         margin-bottom: 40px;
+    }
+    .support-img img {
+        margin-bottom: 25px;
     }
 }
 
