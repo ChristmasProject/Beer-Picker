@@ -59,7 +59,9 @@ underneath the guy on the horse's picture, it always says: "Since 1888 we have b
 molding boys into splendid, clear-thinking young men." Strictly for the birds. They don't
 do any damn more molding at Pencey than they do at any other school. And I didn't know
 anybody there that was splendid and clear-thinking and all. Maybe two guys. If that
-many. And they probably came to Pencey that way.`
+many. And they probably came to Pencey that way.` //back ticks for string literal//
+
+let supportersContent = `121545784541212325523`
 
 // THIS FUNCTION WRITES EACH LINE OF HTML AND RETURNS IT TO THE LOOP FUNCTION
 
@@ -162,6 +164,11 @@ function showAbout(){
     homeBTN.innerHTML = `<a href="#" onclick="location.reload()">Return Home</a>`
 }
 
+function showSupporters() {
+    supportersPage.innerHTML = supportersContent;
+    homeBTN.innerHTML = `<a href="#" onclick="location.reload()">Return Home</a>`
+}
+
 
 // FUNCTIONS GO ABOVE THIS LINE
 // //////////////////////////////////////////
@@ -191,7 +198,10 @@ submitBeer.addEventListener('click', newBeer);
 
 // EXPERIMENTING
 
+let supportersBtn = document.querySelector('#supporters')
+let supportersPage = document.querySelector('#main-page');
 let aboutBTN = document.querySelector('#about');
 let aboutPage = document.querySelector('#main-page');
 let homeBTN = document.querySelector('#returnHome');
 aboutBTN.addEventListener('click', showAbout);
+supportersBtn.addEventListener('click', showSupporters);
