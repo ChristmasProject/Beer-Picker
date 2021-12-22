@@ -8,7 +8,7 @@ let beers = [
     {id: 4, name: "Harpoon Rec.", style: "light", image: "./img/light.jpeg"},
     {id: 5, name: "Kona Blond", style: "light", image: "./img/light.jpeg"},
     {id: 6, name: "Omission Ultimate", style: "light", image: "./img/light.jpeg"},
-    {id: 7, name: "Devils Backbone", style: "cider", image: "./img/cider.jpeg"},
+    {id: 7, name: "Devil\'s Backbone", style: "cider", image: "./img/cider.jpeg"},
     {id: 8, name: "Dooryard", style: "cider", image: "./img/cider.jpeg"},
     {id: 9, name: "La Mûre", style: "cider", image: "./img/cider.jpeg"},
     {id: 10, name: "Woodchuck", style: "cider", image: "./img/cider.jpeg"},
