@@ -80,7 +80,7 @@ function selectBeer(e){
     let chosenBeer = beerNameSelection.value;
     let beerChoice = [];
     beers.forEach(function(beer){
-        if (beer.name.toLowerCase() === chosenBeer.toLowerCase()){
+        if (beer.name.toLowerCase().replace(/\s+/g, '') === chosenBeer.toLowerCase().replace(/\s+/g, '')){
             beerChoice.push(beer);
         }
     });
