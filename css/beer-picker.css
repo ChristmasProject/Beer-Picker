@@ -127,12 +127,7 @@ footer {
 .logo {
     display: flex;
     flex-direction: row;
-    margin-top: 35px;
     justify-content: center;
-}
-
-.logo h2 {
-    margin-top: 10px;
 }
 
 .anchors {
