@@ -100,7 +100,7 @@ function selectBeer(e){
 function newBeer(e) {
     e.preventDefault();
     let newBeerSubmission = {};
-    let newSubmissionName = newBeerName.value;
+    let newSubmissionName = newBeerName.value[0].toUpperCase() + newBeerName.value.substring(1);
     let newSubmissionStyle = newBeerStyle.value;
     newBeerSubmission.id = beers.length + 1;
     newBeerSubmission.name = newSubmissionName;
