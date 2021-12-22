@@ -112,7 +112,7 @@ function newBeer(e) {
     }
 // THIS MAKES SURE IT DOESN'T ALREADY EXIST'
     for(let i = 0; i < beers.length; i++){
-        if(newBeerName.value.toLowerCase() === beers[i].name.toLowerCase()){
+        if(newBeerName.value.toLowerCase().replace(/\s+/g, '') === beers[i].name.toLowerCase().replace(/\s+/g, '')){
         dupeAlert.innerHTML = "That beer already exists bud";
         return;
 
