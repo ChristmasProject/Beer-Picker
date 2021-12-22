@@ -94,9 +94,14 @@ function newBeer(e) {
     newBeerSubmission.name = newSubmissionName;
     newBeerSubmission.style = newSubmissionStyle;
 
+    if(newSubmissionName === ''){
+        dupeAlert.innerHTML = "It's gotta have a name dude"
+        return;
+    }
+
     for(let i = 0; i < beers.length; i++){
         if(newBeerName.value.toLowerCase() === beers[i].name.toLowerCase()){
-        dupeAlert.innerHTML = "That Beer Already Exists Bud";
+        dupeAlert.innerHTML = "That beer already exists bud";
         return;
 
 
@@ -117,8 +122,6 @@ function newBeer(e) {
     beers.push(newBeerSubmission);
     console.log(beers);
     contentArea.innerHTML = createColumns(beers);
-
-
 }
 
 
