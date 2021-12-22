@@ -29,7 +29,15 @@ let beers = [
 ]
 
 // HERE IS THE ABOUT US CONTENT
-let aboutUsContent = `` //back ticks for string literal//
+let aboutUsContent = `<div class="container"><div class="row"><div class="col-md-12 col-lg-12 profiles"><div class="who-imgs">
+       <img src="./img/nelsonprofile.jpg"></div><div><h3>Nelson Delpozo</h3><br>
+                <p>Simplicity requires a two-step process. First, we must invest time and energy to discover what stirsus as human beings, what makes our hearts sing, and what brings us joy. Then, we must proceed to create the
+                    life that reflects the unique people we truly are. This is the heart and soul of simplicity.</p></div></div> </div>
+    <div class="row"><div class="col-md-12 col-lg-12 profiles"><div class="who-imgs"><img src="./img/codyprofile.jpg"></div>
+            <div><h3>Cody Hodges</h3><br><p>Simplicity requires a two-step process. First, we must invest time and energy to discover what stirs us as
+                    human beings, what makes our hearts sing, and what brings us joy. Then, we must proceed to create the life that reflects the unique people we truly are. This is the heart and soul of simplicity.</p>
+            </div></div></div>
+</div>` //back ticks for string literal//
 
 let supportersContent = ``
 
