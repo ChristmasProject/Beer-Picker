@@ -39,7 +39,71 @@ let aboutUsContent = `<div class="container"><div class="row"><div class="col-md
             </div></div></div>
 </div>` //back ticks for string literal//
 
-let supportersContent = ``
+let supportersContent = `<div class="container">
+    <div class="row">
+        <div class="profiles">
+
+            <div class="support-img">
+                <img src="./img/codeup.jpg">
+            </div>
+
+            <div>
+                <h3>CodeUp</h3>
+                <br>
+                <p><a href="https://codeup.com/" target="_blank" rel="noopener norefferer">Codeup</a> has presented us with the information to make all of this possible. Our learning
+                has led us down a path of exploration into the development of Beer Picker. We would like to extend many thanks to them for being our main supporter.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="profiles">
+
+            <div class="support-img">
+                <img src="./img/geekdom.jpg">
+            </div>
+
+            <div>
+                <h3>Geekdom</h3>
+                <br>
+                <p><a href="https://geekdom.com/" target="_blank" rel="noopener norefferer">Geekdom</a> has provided a clean and safe environment for extended learning and paired programming during this process.
+                Having their facilities at our disposal has been beyond helpful.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="profiles">
+
+            <div class="support-img">
+                <img src="./img/flying.jpg">
+            </div>
+
+            <div>
+                <h3>Flying Saucer Draught Emporium </h3>
+                <br>
+                <p><a href="http://www.beerknurd.com/locations/san-antonio-flying-saucer" target="_blank" rel="noopener norefferer">Flying Saucer</a> has been a great venue for writing our code. The stress free environment and GREAT drink options
+                have led to many ideas that were implemented into the page you are currently reading. You can visit them <a href="https://www.google.com/maps/place/Flying+Saucer+Draught+Emporium/@29.5480708,-98.5796343,17z/data=!3m2!4b1!
+                5s0x865c672e0ca79877:0xad0170a7940b5260!4m5!3m4!1s0x865c672dfa28a423:0xc8d8dd7d64fddc14!8m2!3d29.5480708!4d-98.5774456?hl=en" target="_blank" rel="noopener norefferrer">here</a>.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="profiles">
+
+            <div class="support-img">
+                <img src="./img/weathered.jpg">
+            </div>
+
+            <div>
+                <h3>Weathered Souls Brewing Co.</h3>
+                <br>
+                <p><a href="https://weatheredsouls.beer/" target="_blank" rel="noopener norefferer"> Weathered Souls</a> provided the space for the start of Beer Picker. All of the initial framework for this tool were designed
+                right inside of their doors. If you happen to stumble across them on a warmer day then we did, they also have a great outdoor
+                seating area for ideas to come alive. Visit them yourself <a href="https://www.google.com/maps/place/Weathered+Souls+Brewing+Co./@29.5647601,-98.4919831,17z/data=!3m2!4b1!5s0x865c61d4a41a0a1d:0x3
+                93d7d908e767e7d!4m5!3m4!1s0x865c61d4a5d38277:0xab0fa6bce1351b17!8m2!3d29.5647601!4d-98.4897944?hl=en" target="_blank" rel="noopener norefferrer">here</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>`
 
 // THIS FUNCTION WRITES EACH LINE OF HTML AND RETURNS IT TO THE LOOP FUNCTION
 
