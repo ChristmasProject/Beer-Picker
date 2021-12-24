@@ -128,22 +128,24 @@ function createColumns(beers) {
 
 // THIS IS THE FILTERING FOR THE SELECT MENU
 
-function updateBeers(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
-    let selectedBeer = beerSelection.value;
-    let filteredBeers = [];
+// THIS FUNCTION IS COMMENTED OUT BECAUSE IT'S BEEN REPLACED WITH selectFromDropdown '
 
-    if (beerSelection.value === 'all') {
-        contentArea.innerHTML = createColumns(beers);
-        return;
-    } else
-        beers.forEach(function (beer) {
-            if (beer.style === selectedBeer) {
-                filteredBeers.push(beer);
-            }
-        });
-    contentArea.innerHTML = createColumns(filteredBeers);
-}
+// function updateBeers(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update the data
+//     let selectedBeer = beerSelection.value;
+//     let filteredBeers = [];
+//
+//     if (beerSelection.value === 'all') {
+//         contentArea.innerHTML = createColumns(beers);
+//         return;
+//     } else
+//         beers.forEach(function (beer) {
+//             if (beer.style === selectedBeer) {
+//                 filteredBeers.push(beer);
+//             }
+//         });
+//     contentArea.innerHTML = createColumns(filteredBeers);
+// }
 
 // THIS IS FOR WHEN YOU SELECT A BEER IN THE TEXT INPUT
 
@@ -158,6 +160,26 @@ function selectBeer(e) {
     });
     contentArea.innerHTML = createColumns(beerChoice);
 }
+
+// THIS NEW FUNCTION RUNS THE DROPDOWN MENU WITHOUT A BUTTON
+
+function selectFromDropdown(){
+    let selectedBeerStyle = document.getElementById('sel1').value;
+    let selectedBeerList = [];
+    if (selectedBeerStyle === 'all') {
+        contentArea.innerHTML = createColumns(beers);
+        return;
+    } else
+        beers.forEach(function (beer) {
+            if (beer.style === selectedBeerStyle) {
+                selectedBeerList.push(beer);
+            }
+        });
+    contentArea.innerHTML = createColumns(selectedBeerList);
+}
+
+
+
 
 
 // FOOTER FUNCTION STARTS HERE
@@ -219,9 +241,12 @@ let dupeAlert = document.querySelector('#duplicate-beer');
 let contentArea = document.querySelector('.row');
 
 // THESE ARE THE DROPDOWNS AND INPUT FIELDS
-let submitButton = document.querySelector('#selection');
-let beerSelection = document.querySelector('#sel1');
+// THESE ARE NO LONGER NEEDED
+// let submitButton = document.querySelector('#selection');
+// let beerSelection = document.querySelector('#sel1');
 // beerSelection.addEventListener('change', selectBeer);
+
+// THESE QUERIES ARE FOR THE ADD-A-BEER
 let newBeerName = document.querySelector('#added-beer-name');
 let newBeerStyle = document.querySelector('#added-beer-style');
 
@@ -235,7 +260,7 @@ let submitBeer = document.querySelector('#contribute-beer')
 contentArea.innerHTML = createColumns(beers);
 
 // THESE ARE THE EVENT LISTENERS
-submitButton.addEventListener('click', updateBeers);
+// submitButton.addEventListener('click', updateBeers); THIS IS COMMENTED OUT BECAUSE IT'S NO LONGER NEEDED FOR THE DROPDOWN
 chooseABeerButton.addEventListener('click', selectBeer);
 submitBeer.addEventListener('click', newBeer);
 
