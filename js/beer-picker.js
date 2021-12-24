@@ -148,18 +148,19 @@ function createColumns(beers) {
 // }
 
 // THIS IS FOR WHEN YOU SELECT A BEER IN THE TEXT INPUT
+// THIS FUNCTION HAS BEEN REPLACED WITH THE LIVE VERSION BELOW searchForABeer
 
-function selectBeer(e) {
-    e.preventDefault();
-    let chosenBeer = beerNameSelection.value;
-    let beerChoice = [];
-    beers.forEach(function (beer) {
-        if (beer.name.toLowerCase().replace(/\s+/g, '') === chosenBeer.toLowerCase().replace(/\s+/g, '')) {
-            beerChoice.push(beer);
-        }
-    });
-    contentArea.innerHTML = createColumns(beerChoice);
-}
+// function selectBeer(e) {
+//     e.preventDefault();
+//     let chosenBeer = beerNameSelection.value;
+//     let beerChoice = [];
+//     beers.forEach(function (beer) {
+//         if (beer.name.toLowerCase().replace(/\s+/g, '') === chosenBeer.toLowerCase().replace(/\s+/g, '')) {
+//             beerChoice.push(beer);
+//         }
+//     });
+//     contentArea.innerHTML = createColumns(beerChoice);
+// }
 
 // THIS NEW FUNCTION RUNS THE DROPDOWN MENU WITHOUT A BUTTON
 
@@ -177,8 +178,18 @@ function selectFromDropdown(){
         });
     contentArea.innerHTML = createColumns(selectedBeerList);
 }
+// THIS IS FOR SEARCHING ON KEYPRESS IN TEXT FIELD
+function searchForABeer(){
+    let desiredBeer = document.getElementById('beer-name').value;
+    let beerChoice = [];
 
-
+    beers.forEach(function(beer){
+        if (beer.name.toLowerCase().replace(/\s+/g, '').startsWith(desiredBeer)){
+            beerChoice.push(beer);
+        }
+    });
+    contentArea.innerHTML = createColumns(beerChoice);
+}
 
 
 
@@ -251,8 +262,11 @@ let newBeerName = document.querySelector('#added-beer-name');
 let newBeerStyle = document.querySelector('#added-beer-style');
 
 // THE SEARCH BY NAME BOX STARTS HERE
-let chooseABeerButton = document.querySelector('#choose');
-let beerNameSelection = document.querySelector('#beer-name');
+// NO LONGER NEEDED
+// let chooseABeerButton = document.querySelector('#choose');
+// let beerNameSelection = document.querySelector('#beer-name');
+
+
 let submitBeer = document.querySelector('#contribute-beer')
 
 // THIS LAUNCHES THE INITIAL LAYOUT WITH ALL BEERS SHOWING IN ORDER
@@ -261,7 +275,7 @@ contentArea.innerHTML = createColumns(beers);
 
 // THESE ARE THE EVENT LISTENERS
 // submitButton.addEventListener('click', updateBeers); THIS IS COMMENTED OUT BECAUSE IT'S NO LONGER NEEDED FOR THE DROPDOWN
-chooseABeerButton.addEventListener('click', selectBeer);
+// chooseABeerButton.addEventListener('click', selectBeer); SAME HERE
 submitBeer.addEventListener('click', newBeer);
 
 // EXPERIMENTING
