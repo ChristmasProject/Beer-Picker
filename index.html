@@ -43,7 +43,7 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="sel1">Select Beer by Style:</label>
-                <select class="form-control" id="sel1">
+                <select class="form-control" id="sel1" onchange="selectBeerDropdown(this.value)">
                     <option value="all">Show All Beers</option>
                     <option value="light">Light Beers</option>
                     <option value="amber">Amber Beers</option>
