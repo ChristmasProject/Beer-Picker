@@ -246,6 +246,9 @@ function newBeer(e) {
 
 }
 
+function clearForm(){
+    document.getElementById("added-beer-name").reset();
+}
 // THIS FUNCTION SHOWS THE ABOUT US CONTENT AS WELL AS THE RETURN HOME BUTTON, WHICH RELOADS THE PAGE
 function showAbout() {
     aboutPage.innerHTML = aboutUsContent;
