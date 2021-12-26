@@ -230,6 +230,7 @@ function newBeer(e) {
     }
     beers.push(newBeerSubmission);
     console.log(beers);
+    window.localStorage.setItem('beers', JSON.stringify(beers));
     contentArea.innerHTML = createColumns(beers);
 }
 
