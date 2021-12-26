@@ -1,6 +1,17 @@
 "use strict";
 
 // HERE IS THE BEERS ARRAY
+// TRYING TO CHECK IF AN OBJECT EXISTS IN LOCALSTORAGE AND GET IT IF IT DOES, OR CREATE THE ARRAY IF THE OBJECT IS NOT THERE...IT WORKS TO THE POINT WHERE IT LOADS THE TEST ARRAY INSIDE IT WHEN THE OBJECT IS NOT THERE, BUT IT IS NOT ALLOWING THE CREATE A BEER FUNCTION TO OPERATE PROPERLY BECAUSE IT CAN'T ACCESS THE VARIABLE BEERS...STILL WORKING ON IT'
+// function getLocalStorage(){
+//     var beers = [];
+//     if (window.localStorage.getItem("beers") === null){
+//         beers = [{name: "test", style: "light"}]
+//     }else {
+//         beers = JSON.parse(window.localStorage.getItem("beers"));
+//     }return beers;
+// }
+
+
 let beers = [
     {id: 1, name: "Nite Lite", style: "light", image: "./img/light.jpeg"},
     {id: 2, name: "Slightly Mighty", style: "light", image: "./img/light.jpeg"},
@@ -31,7 +42,7 @@ let beers = [
 // HERE IS THE ABOUT US CONTENT
 let aboutUsContent = `<div class="container"><div class="row"><div class="col-md-12 col-lg-12 profiles"><div class="who-imgs">
        <img src="./img/nelsonprofile.jpg"></div><div><h3>Nelson Delpozo</h3><br>
-                <p>Simplicity requires a two-step process. First, we must invest time and energy to discover what stirsus as human beings, what makes our hearts sing, and what brings us joy. Then, we must proceed to create the
+                <p>Simplicity requires a two-step process. First, we must invest time and energy to discover what stirs us as human beings, what makes our hearts sing, and what brings us joy. Then, we must proceed to create the
                     life that reflects the unique people we truly are. This is the heart and soul of simplicity.</p></div></div> </div>
     <div class="row"><div class="col-md-12 col-lg-12 profiles"><div class="who-imgs"><img src="./img/codyprofile.jpg"></div>
             <div><h3>Cody Hodges</h3><br><p>Simplicity requires a two-step process. First, we must invest time and energy to discover what stirs us as
@@ -80,7 +91,7 @@ let supportersContent = `<div class="container">
             <div>
                 <h3>Flying Saucer Draught Emporium </h3>
                 <br>
-                <p><a href="http://www.beerknurd.com/locations/san-antonio-flying-saucer" target="_blank" rel="noopener norefferer">Flying Saucer</a> has been a great venue for writing our code. The stress free environment and GREAT drink options
+                <p><a href="http://www.beerknurd.com/locations/san-antonio-flying-saucer" target="_blank" rel="noopener norefferer">Flying Saucer</a> has been a great venue for writing our code. The stress-free environment and GREAT drink options
                 have led to many ideas that were implemented into the page you are currently reading. You can visit them <a href="https://www.google.com/maps/place/Flying+Saucer+Draught+Emporium/@29.5480708,-98.5796343,17z/data=!3m2!4b1!
                 5s0x865c672e0ca79877:0xad0170a7940b5260!4m5!3m4!1s0x865c672dfa28a423:0xc8d8dd7d64fddc14!8m2!3d29.5480708!4d-98.5774456?hl=en" target="_blank" rel="noopener norefferrer">here</a>.</p>
             </div>
@@ -97,7 +108,7 @@ let supportersContent = `<div class="container">
                 <h3>Weathered Souls Brewing Co.</h3>
                 <br>
                 <p><a href="https://weatheredsouls.beer/" target="_blank" rel="noopener norefferer"> Weathered Souls</a> provided the space for the start of Beer Picker. All of the initial framework for this tool were designed
-                right inside of their doors. If you happen to stumble across them on a warmer day then we did, they also have a great outdoor
+                right inside their doors. If you happen to stumble across them on a warmer day then we did, they also have a great outdoor
                 seating area for ideas to come alive. Visit them yourself <a href="https://www.google.com/maps/place/Weathered+Souls+Brewing+Co./@29.5647601,-98.4919831,17z/data=!3m2!4b1!5s0x865c61d4a41a0a1d:0x3
                 93d7d908e767e7d!4m5!3m4!1s0x865c61d4a5d38277:0xab0fa6bce1351b17!8m2!3d29.5647601!4d-98.4897944?hl=en" target="_blank" rel="noopener norefferrer">here</a>.</p>
             </div>
@@ -164,7 +175,7 @@ function createColumns(beers) {
 
 // THIS NEW FUNCTION RUNS THE DROPDOWN MENU WITHOUT A BUTTON
 
-function selectFromDropdown(){
+function selectFromDropdown() {
     let selectedBeerStyle = document.getElementById('sel1').value;
     let selectedBeerList = [];
     if (selectedBeerStyle === 'all') {
@@ -178,19 +189,19 @@ function selectFromDropdown(){
         });
     contentArea.innerHTML = createColumns(selectedBeerList);
 }
+
 // THIS IS FOR SEARCHING ON KEYPRESS IN TEXT FIELD
-function searchForABeer(){
+function searchForABeer() {
     let desiredBeer = document.getElementById('beer-name').value;
     let beerChoice = [];
 
-    beers.forEach(function(beer){
-        if (beer.name.toLowerCase().replace(/\s+/g, '').startsWith(desiredBeer)){
+    beers.forEach(function (beer) {
+        if (beer.name.toLowerCase().replace(/\s+/g, '').startsWith(desiredBeer)) {
             beerChoice.push(beer);
         }
     });
     contentArea.innerHTML = createColumns(beerChoice);
 }
-
 
 
 // FOOTER FUNCTION STARTS HERE
@@ -230,8 +241,9 @@ function newBeer(e) {
     }
     beers.push(newBeerSubmission);
     console.log(beers);
-    window.localStorage.setItem('beers', JSON.stringify(beers));
     contentArea.innerHTML = createColumns(beers);
+    window.localStorage.setItem('beers', JSON.stringify(beers));
+
 }
 
 // THIS FUNCTION SHOWS THE ABOUT US CONTENT AS WELL AS THE RETURN HOME BUTTON, WHICH RELOADS THE PAGE
