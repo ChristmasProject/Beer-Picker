@@ -10,34 +10,65 @@
 //         beers = JSON.parse(window.localStorage.getItem("beers"));
 //     }return beers;
 // }
+let beers = function(){
+    if (window.localStorage.getItem("beers") === null){
+        return [
+            {id: 1, name: "Nite Lite", style: "light", image: "./img/light.jpeg"},
+            {id: 2, name: "Slightly Mighty", style: "light", image: "./img/light.jpeg"},
+            {id: 3, name: "Bell\'s Light", style: "light", image: "./img/light.jpeg"},
+            {id: 4, name: "Harpoon Rec.", style: "light", image: "./img/light.jpeg"},
+            {id: 5, name: "Kona Blond", style: "light", image: "./img/light.jpeg"},
+            {id: 6, name: "Omission Ultimate", style: "light", image: "./img/light.jpeg"},
+            {id: 7, name: "Devil\'s Backbone", style: "cider", image: "./img/cider.jpeg"},
+            {id: 8, name: "Dooryard", style: "cider", image: "./img/cider.jpeg"},
+            {id: 9, name: "La Mûre", style: "cider", image: "./img/cider.jpeg"},
+            {id: 10, name: "Woodchuck", style: "cider", image: "./img/cider.jpeg"},
+            {id: 11, name: "Pommeau", style: "cider", image: "./img/cider.jpeg"},
+            {id: 12, name: "Blueberry Spaceship", style: "cider", image: "./img/cider.jpeg"},
+            {id: 13, name: "Sunset Skies", style: "amber", image: "./img/amber.jpeg"},
+            {id: 14, name: "Alt-Eration", style: "amber", image: "./img/amber.jpeg"},
+            {id: 15, name: "Balt Altbier", style: "amber", image: "./img/amber.jpeg"},
+            {id: 16, name: "Double Nickel", style: "amber", image: "./img/amber.jpeg"},
+            {id: 17, name: "Free Time", style: "amber", image: "./img/amber.jpeg"},
+            {id: 18, name: "Grevensteiner", style: "amber", image: "./img/amber.jpeg"},
+            {id: 19, name: "Polygamy Nitro", style: "dark", image: "./img/dark.jpeg"},
+            {id: 20, name: "Cutthroat Porter", style: "dark", image: "./img/dark.jpeg"},
+            {id: 21, name: "Old Fezziwig", style: "dark", image: "./img/dark.jpeg"},
+            {id: 22, name: "Edmund Fitzgerald", style: "dark", image: "./img/dark.jpeg"},
+            {id: 23, name: "La Trappe Dubbel", style: "dark", image: "./img/dark.jpeg"},
+            {id: 24, name: "Shark Attack", style: "dark", image: "./img/dark.jpeg"}
+        ]
+    }else {
+       return JSON.parse(window.localStorage.getItem("beers"));
+    }
+}();
 
-
-let beers = [
-    {id: 1, name: "Nite Lite", style: "light", image: "./img/light.jpeg"},
-    {id: 2, name: "Slightly Mighty", style: "light", image: "./img/light.jpeg"},
-    {id: 3, name: "Bell\'s Light", style: "light", image: "./img/light.jpeg"},
-    {id: 4, name: "Harpoon Rec.", style: "light", image: "./img/light.jpeg"},
-    {id: 5, name: "Kona Blond", style: "light", image: "./img/light.jpeg"},
-    {id: 6, name: "Omission Ultimate", style: "light", image: "./img/light.jpeg"},
-    {id: 7, name: "Devil\'s Backbone", style: "cider", image: "./img/cider.jpeg"},
-    {id: 8, name: "Dooryard", style: "cider", image: "./img/cider.jpeg"},
-    {id: 9, name: "La Mûre", style: "cider", image: "./img/cider.jpeg"},
-    {id: 10, name: "Woodchuck", style: "cider", image: "./img/cider.jpeg"},
-    {id: 11, name: "Pommeau", style: "cider", image: "./img/cider.jpeg"},
-    {id: 12, name: "Blueberry Spaceship", style: "cider", image: "./img/cider.jpeg"},
-    {id: 13, name: "Sunset Skies", style: "amber", image: "./img/amber.jpeg"},
-    {id: 14, name: "Alt-Eration", style: "amber", image: "./img/amber.jpeg"},
-    {id: 15, name: "Balt Altbier", style: "amber", image: "./img/amber.jpeg"},
-    {id: 16, name: "Double Nickel", style: "amber", image: "./img/amber.jpeg"},
-    {id: 17, name: "Free Time", style: "amber", image: "./img/amber.jpeg"},
-    {id: 18, name: "Grevensteiner", style: "amber", image: "./img/amber.jpeg"},
-    {id: 19, name: "Polygamy Nitro", style: "dark", image: "./img/dark.jpeg"},
-    {id: 20, name: "Cutthroat Porter", style: "dark", image: "./img/dark.jpeg"},
-    {id: 21, name: "Old Fezziwig", style: "dark", image: "./img/dark.jpeg"},
-    {id: 22, name: "Edmund Fitzgerald", style: "dark", image: "./img/dark.jpeg"},
-    {id: 23, name: "La Trappe Dubbel", style: "dark", image: "./img/dark.jpeg"},
-    {id: 24, name: "Shark Attack", style: "dark", image: "./img/dark.jpeg"}
-]
+// let beers = [
+//     {id: 1, name: "Nite Lite", style: "light", image: "./img/light.jpeg"},
+//     {id: 2, name: "Slightly Mighty", style: "light", image: "./img/light.jpeg"},
+//     {id: 3, name: "Bell\'s Light", style: "light", image: "./img/light.jpeg"},
+//     {id: 4, name: "Harpoon Rec.", style: "light", image: "./img/light.jpeg"},
+//     {id: 5, name: "Kona Blond", style: "light", image: "./img/light.jpeg"},
+//     {id: 6, name: "Omission Ultimate", style: "light", image: "./img/light.jpeg"},
+//     {id: 7, name: "Devil\'s Backbone", style: "cider", image: "./img/cider.jpeg"},
+//     {id: 8, name: "Dooryard", style: "cider", image: "./img/cider.jpeg"},
+//     {id: 9, name: "La Mûre", style: "cider", image: "./img/cider.jpeg"},
+//     {id: 10, name: "Woodchuck", style: "cider", image: "./img/cider.jpeg"},
+//     {id: 11, name: "Pommeau", style: "cider", image: "./img/cider.jpeg"},
+//     {id: 12, name: "Blueberry Spaceship", style: "cider", image: "./img/cider.jpeg"},
+//     {id: 13, name: "Sunset Skies", style: "amber", image: "./img/amber.jpeg"},
+//     {id: 14, name: "Alt-Eration", style: "amber", image: "./img/amber.jpeg"},
+//     {id: 15, name: "Balt Altbier", style: "amber", image: "./img/amber.jpeg"},
+//     {id: 16, name: "Double Nickel", style: "amber", image: "./img/amber.jpeg"},
+//     {id: 17, name: "Free Time", style: "amber", image: "./img/amber.jpeg"},
+//     {id: 18, name: "Grevensteiner", style: "amber", image: "./img/amber.jpeg"},
+//     {id: 19, name: "Polygamy Nitro", style: "dark", image: "./img/dark.jpeg"},
+//     {id: 20, name: "Cutthroat Porter", style: "dark", image: "./img/dark.jpeg"},
+//     {id: 21, name: "Old Fezziwig", style: "dark", image: "./img/dark.jpeg"},
+//     {id: 22, name: "Edmund Fitzgerald", style: "dark", image: "./img/dark.jpeg"},
+//     {id: 23, name: "La Trappe Dubbel", style: "dark", image: "./img/dark.jpeg"},
+//     {id: 24, name: "Shark Attack", style: "dark", image: "./img/dark.jpeg"}
+// ]
 
 // HERE IS THE ABOUT US CONTENT
 let aboutUsContent = `<div class="container"><div class="row"><div class="col-md-12 col-lg-12 profiles"><div class="who-imgs">
@@ -246,9 +277,9 @@ function newBeer(e) {
 
 }
 
-function clearForm(){
-    document.getElementById("added-beer-name").reset();
-}
+// function clearForm(){
+//     document.getElementById("added-beer-name").reset();
+// }
 // THIS FUNCTION SHOWS THE ABOUT US CONTENT AS WELL AS THE RETURN HOME BUTTON, WHICH RELOADS THE PAGE
 function showAbout() {
     aboutPage.innerHTML = aboutUsContent;
