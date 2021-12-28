@@ -206,11 +206,12 @@ function searchForABeer() {
 function newBeer(e) {
     // e.preventDefault();
     let newBeerSubmission = {};
-    let newSubmissionName = newBeerName.value[0].toUpperCase() + newBeerName.value.substring(1);
+    let newSubmissionName = capitalize((newBeerName.value).toLowerCase());
     let newSubmissionStyle = newBeerStyle.value;
     newBeerSubmission.id = beers.length + 1;
     newBeerSubmission.name = newSubmissionName;
     newBeerSubmission.style = newSubmissionStyle;
+
 // THIS MAKES SURE THERE'S A NAME ENTERED'
     if (newSubmissionName === '') {
         dupeAlert.innerHTML = "It's gotta have a name dude"
@@ -259,6 +260,16 @@ function resetArray() {
     window.localStorage.removeItem("beers");
 }
 
+// THIS BEAUTY WILL CAPITALIZE EVERY WORD OF AN ADDED BEER! IT GETS CALLED INSIDE THE ADD-A-BEER FUNCTION
+function capitalize(input) {
+    for (let i = 0; i < input.length; i++) {
+        if (input[i] === ' ') {
+            let newInput = input[i + 1].toUpperCase();
+            input = input[0].toUpperCase() + input.substring(1, i) + " " + newInput + input.substring(i + 2)
+        }
+    }
+    return (input);
+}
 
 // FUNCTIONS GO ABOVE THIS LINE
 // //////////////////////////////////////////
@@ -281,3 +292,5 @@ aboutBTN.addEventListener('click', showAbout);
 supportersBtn.addEventListener('click', showSupporters);
 // THIS LAUNCHES THE INITIAL LAYOUT WITH ALL BEERS SHOWING IN ORDER
 contentArea.innerHTML = createColumns(beers);
+
+
