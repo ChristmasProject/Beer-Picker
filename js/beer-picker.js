@@ -237,7 +237,7 @@ function searchForABeer() {
 
 // FOOTER FUNCTION STARTS HERE
 function newBeer(e) {
-    e.preventDefault();
+    // e.preventDefault();
     let newBeerSubmission = {};
     let newSubmissionName = newBeerName.value[0].toUpperCase() + newBeerName.value.substring(1);
     let newSubmissionStyle = newBeerStyle.value;
@@ -291,6 +291,11 @@ function showSupporters() {
     homeBTN.innerHTML = `<a href="#" onclick="location.reload()">Return Home</a>`
 }
 
+function resetArray() {
+    window.localStorage.clear()
+}
+
+
 
 // FUNCTIONS GO ABOVE THIS LINE
 // //////////////////////////////////////////
@@ -327,7 +332,7 @@ submitBeer.addEventListener('click', newBeer);
 
 // EXPERIMENTING
 
-let supportersBtn = document.querySelector('#supporters')
+let supportersBtn = document.querySelector('#supporters');
 let supportersPage = document.querySelector('#main-page');
 let aboutBTN = document.querySelector('#about');
 let aboutPage = document.querySelector('#main-page');
