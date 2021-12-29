@@ -230,7 +230,7 @@ function capitalize(input) {
             input = input[0].toUpperCase() + input.substring(1, i) + " " + newInput + input.substring(i + 2)
         }
     }
-    return (input);
+    return input[0].toUpperCase() + input.substring(1);
 }
 
 // FUNCTIONS GO ABOVE THIS LINE
