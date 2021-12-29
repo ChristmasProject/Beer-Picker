@@ -91,7 +91,7 @@
                 <p>Contact Us</p></a>
             <a href="#" id="about"><p>Who and Why?</p></a>
             <a href="#" id="supporters"><p>Our Supporters</p></a>
-            <a href="#" id="reset-beers-array" onkeydown="resetArray();">reset beers array</a>
+            <a href="#" id="reset-beers-array" onclick="resetArray(); reloadPage();">reset beers array</a>
         </div>
     </div>
     <div class="foot-middle">
@@ -104,6 +104,7 @@
         <input type="text" class="form-control" id="added-beer-name" placeholder="Name of New Beer">
         <label for="added-beer-style"><br>What kind of shade is it rockin' ?</label>
         <select class="form-control" id="added-beer-style">
+            <option value="" disabled selected>Choose a shade</option>
             <option value="light">Light</option>
             <option value="amber">Amber</option>
             <option value="dark">Dark</option>
@@ -112,14 +113,17 @@
         <br>
         <h6 id="duplicate-beer"></h6>
         <input type="submit" id="contribute-beer" class="btn" value="Add My Beer!">
+<!--               onclick="reloadPage()">-->
     </div>
     <div class="foot-right">
 
         <h2>- GET THE APP -</h2>
         <hr>
         <div class="apps">
-            <a href="https://play.google.com/store?hl=en_US&gl=US" target="_blank"><img src="https://img.icons8.com/doodle/64/000000/google-play.png"/></a>
-            <a href="https://www.apple.com/app-store/" target="_blank"><img src="https://img.icons8.com/material-outlined/96/000000/mac-os--v2.png"/></a>
+            <a href="https://play.google.com/store?hl=en_US&gl=US" target="_blank"><img
+                    src="https://img.icons8.com/doodle/64/000000/google-play.png"/></a>
+            <a href="https://www.apple.com/app-store/" target="_blank"><img
+                    src="https://img.icons8.com/material-outlined/96/000000/mac-os--v2.png"/></a>
         </div>
         <p>Copyright© 2021 Christmas Project Design</p>
     </div>

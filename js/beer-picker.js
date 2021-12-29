@@ -144,7 +144,7 @@ function searchForABeer() {
     let beerChoice = [];
 
     beers.forEach(function (beer) {
-        if (beer.name.toLowerCase().replace(/\s+/g, '').startsWith(desiredBeer)) {
+        if (beer.name.toLowerCase().replace(/\s+/g, '').includes(desiredBeer)) {
             beerChoice.push(beer);
         }
     });
@@ -167,7 +167,14 @@ function newBeer(e) {
         dupeAlert.innerHTML = "It's gotta have a name dude"
         return;
     }
-// THIS MAKES SURE IT DOESN'T ALREADY EXIST'
+
+// THIS MAKES SURE A STYLE IS CHOSEN
+    if (newSubmissionStyle === ''){
+        dupeAlert.innerHTML = "It's gotta look like something"
+        return;
+    }
+
+// THIS MAKES SURE IT DOESN'T ALREADY EXIST
     for (let i = 0; i < beers.length; i++) {
         if (newBeerName.value.toLowerCase().replace(/\s+/g, '') === beers[i].name.toLowerCase().replace(/\s+/g, '')) {
             dupeAlert.innerHTML = "That beer already exists bud";
@@ -191,6 +198,7 @@ function newBeer(e) {
     console.log(beers);
     contentArea.innerHTML = createColumns(beers);
     window.localStorage.setItem('beers', JSON.stringify(beers));
+    location.reload();
 }
 
 // THIS FUNCTION SHOWS THE ABOUT US CONTENT AS WELL AS THE RETURN HOME BUTTON, WHICH RELOADS THE PAGE
@@ -208,6 +216,10 @@ function showSupporters() {
 // THIS REMOVES BEERS FROM LOCAL STORAGE- NEED TO FIGURE OUT HOW TO MAKE IT ALSO RELOAD THE PAGE
 function resetArray() {
     window.localStorage.removeItem("beers");
+}
+
+function reloadPage() {
+    location.reload();
 }
 
 // THIS BEAUTY WILL CAPITALIZE EVERY WORD OF AN ADDED BEER! IT GETS CALLED INSIDE THE ADD-A-BEER FUNCTION
