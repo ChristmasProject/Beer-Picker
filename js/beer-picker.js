@@ -1,43 +1,39 @@
 "use strict";
 
-// HERE IS THE BEERS ARRAY
-// TRYING TO CHECK IF AN OBJECT EXISTS IN LOCALSTORAGE AND GET IT IF IT DOES, OR CREATE THE ARRAY IF THE OBJECT IS NOT THERE...IT WORKS TO THE POINT WHERE IT LOADS THE TEST ARRAY INSIDE IT WHEN THE OBJECT IS NOT THERE, BUT IT IS NOT ALLOWING THE CREATE A BEER FUNCTION TO OPERATE PROPERLY BECAUSE IT CAN'T ACCESS THE VARIABLE BEERS...STILL WORKING ON IT'
-// function getLocalStorage(){
-//     var beers = [];
-//     if (window.localStorage.getItem("beers") === null){
-//         beers = [{name: "test", style: "light"}]
-//     }else {
-//         beers = JSON.parse(window.localStorage.getItem("beers"));
-//     }return beers;
-// }
+// THIS FUNCTION CHECKS TO SEE IF BEERS ALREADY EXISTS IN LOCALSTORAGE, RETRIEVES IT IF SO, OR GENERATES A NEW ARRAY IF NOW
 
-
-let beers = [
-    {id: 1, name: "Nite Lite", style: "light", image: "./img/light.jpeg"},
-    {id: 2, name: "Slightly Mighty", style: "light", image: "./img/light.jpeg"},
-    {id: 3, name: "Bell\'s Light", style: "light", image: "./img/light.jpeg"},
-    {id: 4, name: "Harpoon Rec.", style: "light", image: "./img/light.jpeg"},
-    {id: 5, name: "Kona Blond", style: "light", image: "./img/light.jpeg"},
-    {id: 6, name: "Omission Ultimate", style: "light", image: "./img/light.jpeg"},
-    {id: 7, name: "Devil\'s Backbone", style: "cider", image: "./img/cider.jpeg"},
-    {id: 8, name: "Dooryard", style: "cider", image: "./img/cider.jpeg"},
-    {id: 9, name: "La Mûre", style: "cider", image: "./img/cider.jpeg"},
-    {id: 10, name: "Woodchuck", style: "cider", image: "./img/cider.jpeg"},
-    {id: 11, name: "Pommeau", style: "cider", image: "./img/cider.jpeg"},
-    {id: 12, name: "Blueberry Spaceship", style: "cider", image: "./img/cider.jpeg"},
-    {id: 13, name: "Sunset Skies", style: "amber", image: "./img/amber.jpeg"},
-    {id: 14, name: "Alt-Eration", style: "amber", image: "./img/amber.jpeg"},
-    {id: 15, name: "Balt Altbier", style: "amber", image: "./img/amber.jpeg"},
-    {id: 16, name: "Double Nickel", style: "amber", image: "./img/amber.jpeg"},
-    {id: 17, name: "Free Time", style: "amber", image: "./img/amber.jpeg"},
-    {id: 18, name: "Grevensteiner", style: "amber", image: "./img/amber.jpeg"},
-    {id: 19, name: "Polygamy Nitro", style: "dark", image: "./img/dark.jpeg"},
-    {id: 20, name: "Cutthroat Porter", style: "dark", image: "./img/dark.jpeg"},
-    {id: 21, name: "Old Fezziwig", style: "dark", image: "./img/dark.jpeg"},
-    {id: 22, name: "Edmund Fitzgerald", style: "dark", image: "./img/dark.jpeg"},
-    {id: 23, name: "La Trappe Dubbel", style: "dark", image: "./img/dark.jpeg"},
-    {id: 24, name: "Shark Attack", style: "dark", image: "./img/dark.jpeg"}
-]
+let beers = function () {
+    if (window.localStorage.getItem("beers") === null) {
+        return [
+            {id: 1, name: "Nite Lite", style: "light", image: "./img/light.jpeg"},
+            {id: 2, name: "Slightly Mighty", style: "light", image: "./img/light.jpeg"},
+            {id: 3, name: "Bell\'s Light", style: "light", image: "./img/light.jpeg"},
+            {id: 4, name: "Harpoon Rec.", style: "light", image: "./img/light.jpeg"},
+            {id: 5, name: "Kona Blond", style: "light", image: "./img/light.jpeg"},
+            {id: 6, name: "Omission Ultimate", style: "light", image: "./img/light.jpeg"},
+            {id: 7, name: "Devil\'s Backbone", style: "cider", image: "./img/cider.jpeg"},
+            {id: 8, name: "Dooryard", style: "cider", image: "./img/cider.jpeg"},
+            {id: 9, name: "La Mûre", style: "cider", image: "./img/cider.jpeg"},
+            {id: 10, name: "Woodchuck", style: "cider", image: "./img/cider.jpeg"},
+            {id: 11, name: "Pommeau", style: "cider", image: "./img/cider.jpeg"},
+            {id: 12, name: "Blueberry Spaceship", style: "cider", image: "./img/cider.jpeg"},
+            {id: 13, name: "Sunset Skies", style: "amber", image: "./img/amber.jpeg"},
+            {id: 14, name: "Alt-Eration", style: "amber", image: "./img/amber.jpeg"},
+            {id: 15, name: "Balt Altbier", style: "amber", image: "./img/amber.jpeg"},
+            {id: 16, name: "Double Nickel", style: "amber", image: "./img/amber.jpeg"},
+            {id: 17, name: "Free Time", style: "amber", image: "./img/amber.jpeg"},
+            {id: 18, name: "Grevensteiner", style: "amber", image: "./img/amber.jpeg"},
+            {id: 19, name: "Polygamy Nitro", style: "dark", image: "./img/dark.jpeg"},
+            {id: 20, name: "Cutthroat Porter", style: "dark", image: "./img/dark.jpeg"},
+            {id: 21, name: "Old Fezziwig", style: "dark", image: "./img/dark.jpeg"},
+            {id: 22, name: "Edmund Fitzgerald", style: "dark", image: "./img/dark.jpeg"},
+            {id: 23, name: "La Trappe Dubbel", style: "dark", image: "./img/dark.jpeg"},
+            {id: 24, name: "Shark Attack", style: "dark", image: "./img/dark.jpeg"}
+        ]
+    } else {
+        return JSON.parse(window.localStorage.getItem("beers"));
+    }
+}();
 
 // HERE IS THE ABOUT US CONTENT
 let aboutUsContent = `<div class="container"><div class="row"><div class="col-md-12 col-lg-12 profiles"><div class="who-imgs">
@@ -50,10 +46,12 @@ let aboutUsContent = `<div class="container"><div class="row"><div class="col-md
             </div></div></div>
 </div>` //back ticks for string literal//
 
+// SUPPORTERS PAGE CONTENT
 let supportersContent = `<div class="container"><div class="row"><div class="profiles"><div class="support-img"><img src="./img/codeup.jpg"></div><div><h3>CodeUp</h3>
                 <br><p><a href="https://codeup.com/" target="_blank" rel="noopener norefferer">Codeup</a> has presented us with the information to make all of this possible. Our learning
                 has led us down a path of exploration into the development of Beer Picker. We would like to extend many thanks to them for being our main supporter.</p></div></div></div><div class="row">
                 <div class="profiles"><div class="support-img"><img src="./img/geekdom.jpg"></div><div><h3>Geekdom</h3><br>
+
                 <p><a href="https://geekdom.com/" target="_blank" rel="noopener norefferer">Geekdom</a> has provided a clean and safe environment for extended learning and paired programming during this process.
                 Having their facilities at our disposal has been beyond helpful.</p></div></div></div><div class="row"><div class="profiles"><div class="support-img">
                 <img src="./img/flying.jpg"></div><div><h3>Flying Saucer Draught Emporium </h3><br>
@@ -156,13 +154,14 @@ function searchForABeer() {
 
 // FOOTER FUNCTION STARTS HERE
 function newBeer(e) {
-    e.preventDefault();
+    // e.preventDefault();
     let newBeerSubmission = {};
-    let newSubmissionName = newBeerName.value[0].toUpperCase() + newBeerName.value.substring(1);
+    let newSubmissionName = capitalize((newBeerName.value).toLowerCase());
     let newSubmissionStyle = newBeerStyle.value;
     newBeerSubmission.id = beers.length + 1;
     newBeerSubmission.name = newSubmissionName;
     newBeerSubmission.style = newSubmissionStyle;
+
 // THIS MAKES SURE THERE'S A NAME ENTERED'
     if (newSubmissionName === '') {
         dupeAlert.innerHTML = "It's gotta have a name dude"
@@ -173,8 +172,7 @@ function newBeer(e) {
         if (newBeerName.value.toLowerCase().replace(/\s+/g, '') === beers[i].name.toLowerCase().replace(/\s+/g, '')) {
             dupeAlert.innerHTML = "That beer already exists bud";
             return;
-
-// THIS ADDS IMAGE TO THE NEW BEER OBJECT
+            // THIS ADDS IMAGE TO THE NEW BEER OBJECT
         } else {
             newBeerSubmission.name = newSubmissionName;
             newBeerSubmission.style = newSubmissionStyle;
@@ -193,63 +191,56 @@ function newBeer(e) {
     console.log(beers);
     contentArea.innerHTML = createColumns(beers);
     window.localStorage.setItem('beers', JSON.stringify(beers));
-
 }
 
-function clearForm(){
-    document.getElementById("added-beer-name").reset();
-}
 // THIS FUNCTION SHOWS THE ABOUT US CONTENT AS WELL AS THE RETURN HOME BUTTON, WHICH RELOADS THE PAGE
 function showAbout() {
     aboutPage.innerHTML = aboutUsContent;
     homeBTN.innerHTML = `<a href="#" onclick="location.reload()">Return Home</a>`
 }
 
+// SHOW SUPPORTERS PAGE AND RELOAD BUTTON
 function showSupporters() {
     supportersPage.innerHTML = supportersContent;
     homeBTN.innerHTML = `<a href="#" onclick="location.reload()">Return Home</a>`
 }
 
+// THIS REMOVES BEERS FROM LOCAL STORAGE- NEED TO FIGURE OUT HOW TO MAKE IT ALSO RELOAD THE PAGE
+function resetArray() {
+    window.localStorage.removeItem("beers");
+}
+
+// THIS BEAUTY WILL CAPITALIZE EVERY WORD OF AN ADDED BEER! IT GETS CALLED INSIDE THE ADD-A-BEER FUNCTION
+function capitalize(input) {
+    for (let i = 0; i < input.length; i++) {
+        if (input[i] === ' ') {
+            let newInput = input[i + 1].toUpperCase();
+            input = input[0].toUpperCase() + input.substring(1, i) + " " + newInput + input.substring(i + 2)
+        }
+    }
+    return (input);
+}
 
 // FUNCTIONS GO ABOVE THIS LINE
 // //////////////////////////////////////////
-// THIS ONE DECLARES THE CONTENT AREAS
-let dupeAlert = document.querySelector('#duplicate-beer');
-let contentArea = document.querySelector('.row');
 
-// THESE ARE THE DROPDOWNS AND INPUT FIELDS
-// THESE ARE NO LONGER NEEDED
-// let submitButton = document.querySelector('#selection');
-// let beerSelection = document.querySelector('#sel1');
-// beerSelection.addEventListener('change', selectBeer);
 
-// THESE QUERIES ARE FOR THE ADD-A-BEER
+// THESE ARE THE EVENT LISTENERS AND QUERY SELECTORS
+
 let newBeerName = document.querySelector('#added-beer-name');
 let newBeerStyle = document.querySelector('#added-beer-style');
-
-// THE SEARCH BY NAME BOX STARTS HERE
-// NO LONGER NEEDED
-// let chooseABeerButton = document.querySelector('#choose');
-// let beerNameSelection = document.querySelector('#beer-name');
-
-
+let dupeAlert = document.querySelector('#duplicate-beer');
+let contentArea = document.querySelector('.row');
 let submitBeer = document.querySelector('#contribute-beer')
-
-// THIS LAUNCHES THE INITIAL LAYOUT WITH ALL BEERS SHOWING IN ORDER
-
-contentArea.innerHTML = createColumns(beers);
-
-// THESE ARE THE EVENT LISTENERS
-// submitButton.addEventListener('click', updateBeers); THIS IS COMMENTED OUT BECAUSE IT'S NO LONGER NEEDED FOR THE DROPDOWN
-// chooseABeerButton.addEventListener('click', selectBeer); SAME HERE
-submitBeer.addEventListener('click', newBeer);
-
-// EXPERIMENTING
-
-let supportersBtn = document.querySelector('#supporters')
+let supportersBtn = document.querySelector('#supporters');
 let supportersPage = document.querySelector('#main-page');
 let aboutBTN = document.querySelector('#about');
 let aboutPage = document.querySelector('#main-page');
 let homeBTN = document.querySelector('#returnHome');
+submitBeer.addEventListener('click', newBeer);
 aboutBTN.addEventListener('click', showAbout);
 supportersBtn.addEventListener('click', showSupporters);
+// THIS LAUNCHES THE INITIAL LAYOUT WITH ALL BEERS SHOWING IN ORDER
+contentArea.innerHTML = createColumns(beers);
+
+
