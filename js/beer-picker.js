@@ -140,7 +140,7 @@ function selectFromDropdown() {
 
 // THIS IS FOR SEARCHING ON KEYPRESS IN TEXT FIELD
 function searchForABeer() {
-    let desiredBeer = document.getElementById('beer-name').value;
+    let desiredBeer = document.getElementById('beer-name').value.toLowerCase();
     let beerChoice = [];
 
     beers.forEach(function (beer) {
