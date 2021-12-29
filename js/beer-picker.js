@@ -210,7 +210,7 @@ function resetArray() {
     window.localStorage.removeItem("beers");
 }
 
-function reloadPage(){
+function reloadPage() {
     location.reload();
 }
 
