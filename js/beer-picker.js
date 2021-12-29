@@ -167,7 +167,14 @@ function newBeer(e) {
         dupeAlert.innerHTML = "It's gotta have a name dude"
         return;
     }
-// THIS MAKES SURE IT DOESN'T ALREADY EXIST'
+
+// THIS MAKES SURE A STYLE IS CHOSEN
+    if (newSubmissionStyle === ''){
+        dupeAlert.innerHTML = "It's gotta look like something"
+        return;
+    }
+
+// THIS MAKES SURE IT DOESN'T ALREADY EXIST
     for (let i = 0; i < beers.length; i++) {
         if (newBeerName.value.toLowerCase().replace(/\s+/g, '') === beers[i].name.toLowerCase().replace(/\s+/g, '')) {
             dupeAlert.innerHTML = "That beer already exists bud";
@@ -191,6 +198,7 @@ function newBeer(e) {
     console.log(beers);
     contentArea.innerHTML = createColumns(beers);
     window.localStorage.setItem('beers', JSON.stringify(beers));
+    location.reload();
 }
 
 // THIS FUNCTION SHOWS THE ABOUT US CONTENT AS WELL AS THE RETURN HOME BUTTON, WHICH RELOADS THE PAGE
