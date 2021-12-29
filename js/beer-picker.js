@@ -144,7 +144,7 @@ function searchForABeer() {
     let beerChoice = [];
 
     beers.forEach(function (beer) {
-        if (beer.name.toLowerCase().replace(/\s+/g, '').startsWith(desiredBeer)) {
+        if (beer.name.toLowerCase().replace(/\s+/g, '').includes(desiredBeer)) {
             beerChoice.push(beer);
         }
     });
