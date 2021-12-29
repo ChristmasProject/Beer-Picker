@@ -210,6 +210,10 @@ function resetArray() {
     window.localStorage.removeItem("beers");
 }
 
+function reloadPage(){
+    location.reload();
+}
+
 // THIS BEAUTY WILL CAPITALIZE EVERY WORD OF AN ADDED BEER! IT GETS CALLED INSIDE THE ADD-A-BEER FUNCTION
 function capitalize(input) {
     for (let i = 0; i < input.length; i++) {
